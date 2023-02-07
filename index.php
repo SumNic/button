@@ -28,9 +28,6 @@
     } else {
       // открывается отправленное сообщение
       setTimeout(openNewMesseg, 1000);
-      // openNewMesseg();
-      // передвигает страницу к последему сообщению
-      setTimeout(reLoad, 2000);
     }
   }
   document.getElementById("send_message").reset();
