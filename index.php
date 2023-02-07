@@ -27,7 +27,7 @@
       }, 2000);
     } else {
       // открывается отправленное сообщение
-      setTimeout(openNewMesseg, 1000);
+      setTimeout(openNewMesseg, 1000);смч
     }
   }
   document.getElementById("send_message").reset();
