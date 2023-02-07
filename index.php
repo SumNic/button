@@ -9,32 +9,44 @@
 <body>
 <form name="button" id="button">
     <input type="file" name="file">
-    <input type="reset" onclick="fileLoad()">
-</form>   
+    <input type="reset" value="Загрузить" onclick="fileLoad()">
+</form>  
+<p id="demo"></p> 
+<p id="list"></p> 
 <script>
-    function sendMessage() {
-  
-  var formData = new FormData(document.forms.button);
+  // console.log(window.location.pathname);
+    function fileLoad() {
+      
+      var formData = new FormData(document.forms.button);
+      
 
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    const respons = this.responseText;
-    if (respons !== ""){
-      div_message.style = "display:flex";
-      message_message.innerHTML = respons;
-      setTimeout(function() {
-        div_message.style = "display:none";
-      }, 2000);
-    } else {
-      // открывается отправленное сообщение
-      setTimeout(openNewMesseg, 1000);смч
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        const respons = this.responseText;
+        
+          demo.innerHTML = respons;
+          fileList();
+        }
+      xhttp.open("POST", "button.php", true);
+      xhttp.send(formData);
     }
-  }
-  document.getElementById("send_message").reset();
-  xhttp.open("POST", "button.php", true);
-  // xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhttp.send(formData);
-}
+    function fileList() {
+  
+      var x = 5;
+      var list = document.getElementById('list');
+      
+
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        const respons = this.responseText;
+        list.innerHTML = respons;
+        }
+      xhttp.open("POST", "list.php", true);
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhttp.send('x=' + x);
+    }
+
+    fileList();
 </script> 
 </body>
 </html>
