@@ -143,6 +143,7 @@ lis:
                       IGNORE $ignor LINES 
                       $strint_load_str
                       SET $strint_set";
+                      echo $sql;
                     if ($mysql->query($sql) === TRUE) {
                       echo 'Файл '.$File.' загружен успешно';
                     } else {
