@@ -84,7 +84,7 @@ lis:
       }
       // значения SET
       if (strpos($name, 'date') !== false){
-        $strint_set = $strint_set.$name."=STR_TO_DATE(@'".$name."', '%d.%m.%Y %H:%i:%s'), ";
+        $strint_set = $strint_set.$name."=STR_TO_DATE(@".$name.", '%d.%m.%Y %H:%i:%s'), ";
       } else if (strpos($name, 'number') !== false){
         $strint_set = $strint_set.$name.'= NULLIF(@'.$name.', 0), ';
       } else if (strpos($name, 'text') !== false){
@@ -96,6 +96,7 @@ lis:
     }
     
   }
+  
   $col = chr(ord($col)-2);
   $strint_kay_out_id = rtrim($strint_kay_out_id, ',');
   $strint_kay = rtrim($strint_kay, ',');
@@ -144,6 +145,9 @@ lis:
                       $strint_load_str
                       SET $strint_set";
                       echo $sql;
+                      
+                      
+
                     if ($mysql->query($sql) === TRUE) {
                       echo 'Файл '.$File.' загружен успешно';
                     } else {
@@ -155,6 +159,7 @@ lis:
                   }
                 }
               }
+              
           $mysql->close();
 
   // $mysql = new mysqli('localhost', 'u1870963_default', '93HgEE7or1RrVHow', 'button');
