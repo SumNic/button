@@ -1,0 +1,15 @@
+{
+    "ignor": "1",
+    "id": "INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY",
+    "date": "DATETIME",
+    "number": "DECIMAL (10, 3) DEFAULT NULL", 
+    "text1": "VARCHAR(255) NOT NULL",
+    "text2": "VARCHAR(255) NOT NULL",
+    "text3": "VARCHAR(255) NOT NULL",
+    "text4": "VARCHAR(255) NOT NULL",
+    "text5": "VARCHAR(255) NOT NULL",
+    "text6": "VARCHAR(255) NOT NULL",
+    "text7": "VARCHAR(255) NOT NULL",
+    "text8": "VARCHAR(255) NOT NULL",
+    "text9": "VARCHAR(255) NOT NULL"
+}
