@@ -25,7 +25,7 @@
       xhttp.onload = function() {
         const respons = this.responseText;
         if (respons === ''){
-          alert('Файл не загружен. Проверте шаблон JSON таблицы');
+          alert('Файл не загружен. Проверте шаблон JSON таблицы ');
         }
           alert(respons);
           // demo.innerHTML = respons;
